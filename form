@@ -1,0 +1,54 @@
+<div class="container mt-4">
+  {!! Form::open(['route' => 'place-order', "method" => "post", "class" => "form", "id" => "checkOut"]) !!}
+      {!! Form::token() !!}
+          <div class="row checkout-form">
+              <div class="col-md-6">
+                  {!! Form::label("first_name", "First Name") !!}
+                  {!! Form::text("first_name", Auth::user()->name, ['class' => 'form-control','placeholder' => 'Enter first name']) !!}
+                  {!! $errors->first("first_name",'<span class="help-block text-danger">:message</span>') !!}
+              </div>
+              <div class="col-md-6">
+                  {!! Form::label("last_name", "Last Name") !!}
+                  {!! Form::text("last_name", Auth::user()->lname, ['class' => 'form-control','placeholder' => 'Enter last name']) !!}
+                  {!! $errors->first("last_name",'<span class="help-block text-danger">:message</span>') !!}
+              </div>
+              <div class="col-md-6 mt-3">
+                  {!! Form::label("email", "Email") !!}
+                  {!! Form::text("email", Auth::user()->email, ['class' => 'form-control','placeholder' => 'Enter your email id']) !!}
+                  {!! $errors->first("email",'<span class="help-block text-danger">:message</span>') !!}
+              </div>
+              <div class="col-md-6 mt-3">
+                  {!! Form::label("phone_number", "Phone Number") !!}
+                  {!! Form::text("phone_number", Auth::user()->phone_number, ['class' => 'form-control','placeholder' => 'Enter your phone number']) !!}
+                  {!! $errors->first("phone_number",'<span class="help-block text-danger">:message</span>') !!}
+                  
+              </div>
+              <div class="col-md-6 mt-3">
+                  {!! Form::label("address", "Address") !!}
+                  {!! Form::text("address", Auth::user()->address, ['class' => 'form-control','placeholder' => 'Enter your shipping address']) !!}
+                  {!! $errors->first("address",'<span class="help-block text-danger">:message</span>') !!}
+              </div>
+                  <div class="col-md-6 mt-3">
+                  {!! Form::label("landmark", "Landmark") !!}
+                  {!! Form::text("landmark", Auth::user()->landmark, ['class' => 'form-control','placeholder' => 'Enter your landmark is any']) !!}
+                  {!! $errors->first("landmark",'<span class="help-block text-danger">:message</span>') !!}
+              </div>
+              <div class="col-md-6 mt-3">
+                  {!! Form::label("state", "State") !!}
+                  {!! Form::text("state", Auth::user()->state, ['class' => 'form-control','placeholder' => 'Enter your satate']) !!}
+                  {!! $errors->first("state",'<span class="help-block text-danger">:message</span>') !!}
+              </div>
+              <div class="col-md-6 mt-3">
+                  {!! Form::label("city", "City") !!}
+                  {!! Form::text("city", Auth::user()->city, ['class' => 'form-control','placeholder' => 'Enter your city']) !!}
+                  {!! $errors->first("city",'<span class="help-block text-danger">:message</span>') !!}
+              </div>
+              <div class="col-md-6 mt-3">
+                  {!! Form::label("pincode", "Pincode") !!}
+                  {!! Form::text("pincode", Auth::user()->pincode, ['class' => 'form-control','placeholder' => 'Enter your area pincode']) !!}
+                  {!! $errors->first("pincode",'<span class="help-block text-danger">:message</span>') !!}
+              </div>
+          </div>
+      {!! Form::submit("Place Order", ["class"=>"btn btn-outline-primary float-end"]) !!}
+  {!! Form::close() !!}
+</div>
